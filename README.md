@@ -2,6 +2,8 @@
 
 > 🌐 **Live Demo**: [https://angjeng.github.io/](https://angjeng.github.io/)
 
+![Portfolio Preview](assets/portfolio-preview.png)
+
 A modern, responsive, dark-mode personal website for **An Jeng** (Full-Stack & AI Systems Engineer), built with pure semantic HTML5, modern CSS3 (Custom Design System & Glassmorphism), and Vanilla ES6+ JavaScript.
 
 ---
