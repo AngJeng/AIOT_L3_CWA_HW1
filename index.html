@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Jeng — Full-Stack & AI Systems Engineer</title>
+  <meta name="description" content="Personal portfolio of An Jeng — Full-Stack & AI Systems Engineer specializing in scalable web architectures, distributed systems, and agentic AI.">
+  
+  <!-- Favicon Monogram -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Cursor Light Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-grid-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo" id="navLogo">
+        <div class="logo-badge">AJ</div>
+        <span>An Jeng</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="status-pill" title="Currently open to high-impact roles & technical consulting">
+          <span class="status-dot"></span>
+          <span>Available for work</span>
+        </div>
+        <a href="#contact" class="btn btn-glass btn-sm" id="navContactBtn">Let's Talk</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="sparkle">✦</span>
+              <span>Full-Stack & AI Systems Engineer</span>
+            </div>
+            
+            <h1 class="hero-title">
+              Engineering <span class="gradient-text">intelligent systems</span> & high-performance digital products.
+            </h1>
+            
+            <p class="hero-description">
+              Hi, I'm <strong>An Jeng</strong>. I build resilient distributed architectures, modern frontends, and LLM-powered agentic workflows that bridge deep technical rigor with intuitive user experience.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary" id="heroProjectsBtn">
+                <span>View Projects</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-glass" id="heroContactBtn">
+                <span>Get in Touch</span>
+              </a>
+              <button class="btn btn-glass" id="copyEmailQuickBtn" title="Copy email address">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Email</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Code Terminal Card -->
+          <div class="terminal-card" id="terminalCard">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <div class="terminal-dot red"></div>
+                <div class="terminal-dot yellow"></div>
+                <div class="terminal-dot green"></div>
+              </div>
+              <div class="terminal-title">an_jeng_profile.ts</div>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <span class="terminal-prompt">&gt;</span>
+                <span class="terminal-code"><span class="kw">const</span> engineer = {</span>
+              </div>
+              <div class="terminal-line" style="padding-left: 20px;">
+                <span class="terminal-code"><span class="prop">name</span>: <span class="str">"An Jeng"</span>,</span>
+              </div>
+              <div class="terminal-line" style="padding-left: 20px;">
+                <span class="terminal-code"><span class="prop">location</span>: <span class="str">"San Francisco, CA / Remote"</span>,</span>
+              </div>
+              <div class="terminal-line" style="padding-left: 20px;">
+                <span class="terminal-code"><span class="prop">focus</span>: [<span class="str">"Full-Stack"</span>, <span class="str">"Agentic AI"</span>, <span class="str">"Cloud Systems"</span>],</span>
+              </div>
+              <div class="terminal-line" style="padding-left: 20px;">
+                <span class="terminal-code"><span class="prop">stack</span>: [<span class="str">"TypeScript"</span>, <span class="str">"Python"</span>, <span class="str">"React"</span>, <span class="str">"Next.js"</span>, <span class="str">"PyTorch"</span>],</span>
+              </div>
+              <div class="terminal-line" style="padding-left: 20px;">
+                <span class="terminal-code"><span class="prop">status</span>: <span class="val">"Ready to build ambitious software"</span></span>
+              </div>
+              <div class="terminal-line">
+                <span class="terminal-prompt">&gt;</span>
+                <span class="terminal-code">};</span>
+              </div>
+              <div class="terminal-line">
+                <span class="terminal-prompt">&gt;</span>
+                <span class="terminal-code">engineer.deploySolution();</span>
+                <span class="terminal-cursor"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Highlights Banner -->
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number">5+</div>
+            <div class="metric-label">Years of Engineering Experience</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">20+</div>
+            <div class="metric-label">Production Deployments & Apps</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">&lt;15ms</div>
+            <div class="metric-label">P99 Latency Across Vector APIs</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">100k+</div>
+            <div class="metric-label">Developers & End Users Impacted</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">About Me</div>
+          <h2 class="section-title">Bridging architectural depth with <span class="gradient-text">product craft</span></h2>
+          <p class="section-subtitle">A blend of systems thinking, modern UX design, and deep learning engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column Profile Card -->
+          <div class="about-card-left">
+            <div class="profile-avatar-box">
+              <span>⚡</span>
+            </div>
+            <h3 class="profile-name">An Jeng</h3>
+            <div class="profile-role">Senior Full-Stack & AI Systems Engineer</div>
+
+            <ul class="profile-meta-list">
+              <li class="profile-meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>San Francisco Bay Area / Global Remote</span>
+              </li>
+              <li class="profile-meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <span>Lead Engineer & System Architect</span>
+              </li>
+              <li class="profile-meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Timezone: PST / Flexible for Global Teams</span>
+              </li>
+              <li class="profile-meta-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>B.S. in Computer Science</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Column Narrative -->
+          <div class="about-narrative">
+            <p>
+              I specialize in designing and shipping products at the intersection of <strong>distributed backend systems</strong>, <strong>modern reactive frontends</strong>, and <strong>autonomous AI agent architectures</strong>.
+            </p>
+            <p>
+              Over the past 5+ years, I have architected vector search pipelines handling millions of queries with sub-15ms latency, designed multi-agent orchestration frameworks that turn complex workflows into deterministic execution DAGs, and built polished web applications used by tens of thousands of users.
+            </p>
+            <p>
+              My engineering philosophy revolves around three foundational pillars:
+            </p>
+
+            <div class="philosophy-cards">
+              <div class="philosophy-item">
+                <div class="philosophy-title">
+                  <span>⚡</span> High-Throughput Simplicity
+                </div>
+                <div class="philosophy-desc">
+                  Write clean, maintainable, and observable code without premature complexity.
+                </div>
+              </div>
+              <div class="philosophy-item">
+                <div class="philosophy-title">
+                  <span>🎨</span> Aesthetic & Ergonomic UX
+                </div>
+                <div class="philosophy-desc">
+                  Every interaction must feel instant, intuitive, and visually cohesive.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Showcase</div>
+          <h2 class="section-title">Featured <span class="gradient-text">Engineering Projects</span></h2>
+          <p class="section-subtitle">Real-world systems, open-source tools, and production applications I've designed and engineered.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="projects-filter" id="projectFilters">
+          <button class="filter-btn active" data-category="all">All Work</button>
+          <button class="filter-btn" data-category="ai">AI & Agents</button>
+          <button class="filter-btn" data-category="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-category="systems">Cloud & Systems</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          
+          <!-- Project 1 -->
+          <div class="project-card" data-category="ai" data-project-id="nexus-ai">
+            <div class="project-top">
+              <div class="project-header-bar">
+                <span class="project-category">AI & Autonomous Agents</span>
+                <div class="project-links">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="project-link-icon" title="View Source Code">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </a>
+                  <a href="#" class="project-link-icon" title="Live Interactive Demo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">NexusAI Agent Studio</h3>
+              <p class="project-description">
+                Visual multi-agent orchestration engine supporting dynamic DAG execution, human-in-the-loop debugging, and streaming telemetry.
+              </p>
+              <div class="project-metric-pill">
+                <span>⚡</span> 10x Faster Agent Development Cycle
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">WebSockets</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-details-btn" data-project-target="nexus-ai">
+                <span>View Architecture & Metrics</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-category="systems" data-project-id="hyperscale-vector">
+            <div class="project-top">
+              <div class="project-header-bar">
+                <span class="project-category">Distributed Systems & AI</span>
+                <div class="project-links">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="project-link-icon" title="View Source Code">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </a>
+                  <a href="#" class="project-link-icon" title="API Docs & Benchmarks">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">HyperScale Vector Lake</h3>
+              <p class="project-description">
+                Ultra-low latency distributed vector indexing engine and search API with SIMD acceleration and hybrid sparse-dense filtering.
+              </p>
+              <div class="project-metric-pill">
+                <span>⚡</span> &lt;15ms p99 across 10M embeddings
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">PyTorch</span>
+                <span class="project-tag">Rust</span>
+                <span class="project-tag">gRPC</span>
+                <span class="project-tag">Docker</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-details-btn" data-project-target="hyperscale-vector">
+                <span>View Architecture & Metrics</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-category="fullstack" data-project-id="aura-design">
+            <div class="project-top">
+              <div class="project-header-bar">
+                <span class="project-category">Frontend & UI Systems</span>
+                <div class="project-links">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="project-link-icon" title="View Source Code">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </a>
+                  <a href="#" class="project-link-icon" title="Storybook Component Showcase">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">Aura Design System</h3>
+              <p class="project-description">
+                Accessible, themeable, zero-runtime overhead component library engineered for modern web applications and complex dashboards.
+              </p>
+              <div class="project-metric-pill">
+                <span>★</span> 4.5k GitHub Stars • 50k+ npm downloads
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">CSS Modules</span>
+                <span class="project-tag">Storybook</span>
+                <span class="project-tag">WCAG 2.1 AA</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-details-btn" data-project-target="aura-design">
+                <span>View Architecture & Metrics</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="systems" data-project-id="pulse-ops">
+            <div class="project-top">
+              <div class="project-header-bar">
+                <span class="project-category">Observability & DevOps</span>
+                <div class="project-links">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="project-link-icon" title="View Source Code">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </a>
+                  <a href="#" class="project-link-icon" title="Live Dashboard">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">PulseOps Real-Time Telemetry</h3>
+              <p class="project-description">
+                Distributed infrastructure monitoring platform with ML-assisted anomaly detection and intelligent alerting engine.
+              </p>
+              <div class="project-metric-pill">
+                <span>⚡</span> Detected 98% anomalies 12m ahead of incident
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">Go</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">ClickHouse</span>
+                <span class="project-tag">Kafka</span>
+                <span class="project-tag">Kubernetes</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-details-btn" data-project-target="pulse-ops">
+                <span>View Architecture & Metrics</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Career History</div>
+          <h2 class="section-title">Where I've <span class="gradient-text">Shipped Impact</span></h2>
+          <p class="section-subtitle">Track record of technical leadership, architectural decisions, and full-cycle execution.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Role 1 -->
+          <div class="timeline-item active">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Lead AI & Full-Stack Engineer</h3>
+                  <div class="timeline-company">Synthetix Labs</div>
+                </div>
+                <div class="timeline-period">2024 — Present</div>
+              </div>
+              <ul class="timeline-points">
+                <li>Architected an enterprise agent orchestration runtime processing 500k+ daily autonomous tasks.</li>
+                <li>Spearheaded transition to reactive streaming UI architectures using Server-Sent Events & WebSockets, cutting latency perception by 65%.</li>
+                <li>Mentored a cross-functional team of 6 engineers across frontend performance and LLM inference optimization.</li>
+              </ul>
+              <div class="timeline-stack">
+                <span class="timeline-badge">TypeScript</span>
+                <span class="timeline-badge">Next.js 14</span>
+                <span class="timeline-badge">Python</span>
+                <span class="timeline-badge">FastAPI</span>
+                <span class="timeline-badge">Redis</span>
+                <span class="timeline-badge">AWS EKS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Senior Software Engineer</h3>
+                  <div class="timeline-company">CloudVortex</div>
+                </div>
+                <div class="timeline-period">2022 — 2024</div>
+              </div>
+              <ul class="timeline-points">
+                <li>Engineered high-throughput cloud migration pipelines transferring 80TB+ data with zero data loss.</li>
+                <li>Designed the core design system and micro-frontend architecture supporting 4 major internal product lines.</li>
+                <li>Improved core web vitals across all public surfaces, achieving a 99/100 Lighthouse performance score.</li>
+              </ul>
+              <div class="timeline-stack">
+                <span class="timeline-badge">React</span>
+                <span class="timeline-badge">Node.js</span>
+                <span class="timeline-badge">PostgreSQL</span>
+                <span class="timeline-badge">Kafka</span>
+                <span class="timeline-badge">Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Full-Stack Developer</h3>
+                  <div class="timeline-company">Nova Interactive</div>
+                </div>
+                <div class="timeline-period">2020 — 2022</div>
+              </div>
+              <ul class="timeline-points">
+                <li>Built interactive client web applications, data dashboards, and real-time collaborative workspaces.</li>
+                <li>Implemented RESTful and GraphQL APIs with automated end-to-end testing suites.</li>
+                <li>Reduced bundle size by 42% through aggressive tree-shaking and dynamic code-splitting.</li>
+              </ul>
+              <div class="timeline-stack">
+                <span class="timeline-badge">JavaScript</span>
+                <span class="timeline-badge">TypeScript</span>
+                <span class="timeline-badge">React</span>
+                <span class="timeline-badge">Express</span>
+                <span class="timeline-badge">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Toolkit Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Competencies</div>
+          <h2 class="section-title">Technical <span class="gradient-text">Toolkit & Skills</span></h2>
+          <p class="section-subtitle">A curated view of languages, frameworks, and engineering disciplines I employ daily.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1 -->
+          <div class="skills-category-card">
+            <div class="category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3 class="category-title">Frontend Engineering</h3>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>TypeScript / JavaScript</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>React & Next.js</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>State Management / TanStack</span> <span class="skill-level">Advanced</span></div>
+              <div class="skill-pill"><span>CSS Architecture & WebGL</span> <span class="skill-level">Advanced</span></div>
+              <div class="skill-pill"><span>Web Vitals & Performance</span> <span class="skill-level">Expert</span></div>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skills-category-card">
+            <div class="category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <h3 class="category-title">Backend & Systems</h3>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>Python & FastAPI</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>Node.js & Go</span> <span class="skill-level">Advanced</span></div>
+              <div class="skill-pill"><span>PostgreSQL & Redis</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>REST, GraphQL, gRPC</span> <span class="skill-level">Advanced</span></div>
+              <div class="skill-pill"><span>Distributed Event Streams</span> <span class="skill-level">Advanced</span></div>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skills-category-card">
+            <div class="category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+            </div>
+            <h3 class="category-title">AI & Machine Learning</h3>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>Autonomous Agents & DAGs</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>PyTorch & Fine-Tuning</span> <span class="skill-level">Advanced</span></div>
+              <div class="skill-pill"><span>RAG & Vector Embeddings</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>LangChain & LlamaIndex</span> <span class="skill-level">Advanced</span></div>
+              <div class="skill-pill"><span>Evaluations & Guardrails</span> <span class="skill-level">Advanced</span></div>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="skills-category-card">
+            <div class="category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="category-title">DevOps & Cloud</h3>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>Docker & Containers</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>Kubernetes Orchestration</span> <span class="skill-level">Intermediate</span></div>
+              <div class="skill-pill"><span>AWS & GCP Infrastructure</span> <span class="skill-level">Advanced</span></div>
+              <div class="skill-pill"><span>CI/CD Automation</span> <span class="skill-level">Expert</span></div>
+              <div class="skill-pill"><span>Telemetry & Monitoring</span> <span class="skill-level">Advanced</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Get in Touch</div>
+          <h2 class="section-title">Let's build something <span class="gradient-text">remarkable</span></h2>
+          <p class="section-subtitle">Whether you have a breakthrough project in mind, an engineering leadership role, or want to exchange ideas, I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Connect Info -->
+          <div class="contact-info-card">
+            <h3 class="contact-headline">Reach Out Directly</h3>
+            <p class="contact-text">
+              I am currently open to exciting technical challenges, advisory roles, and engineering leadership opportunities.
+            </p>
+
+            <div class="contact-direct-box">
+              <span class="contact-direct-email" id="emailDisplay">an.jeng.eng@gmail.com</span>
+              <button class="copy-email-btn" id="copyEmailBtn" aria-label="Copy email address to clipboard">Copy</button>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com" target="_blank" rel="noopener" class="social-btn" id="githubLink">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn" id="linkedinLink">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="social-btn" id="twitterLink">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                <span>Twitter / X</span>
+              </a>
+              <a href="https://substack.com" target="_blank" rel="noopener" class="social-btn" id="substackLink">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Substack</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-card">
+            <form id="contactForm">
+              <div class="form-group">
+                <label class="form-label" for="formName">Your Name</label>
+                <input class="form-input" type="text" id="formName" required placeholder="Alex Mercer">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="formEmail">Your Email</label>
+                <input class="form-input" type="email" id="formEmail" required placeholder="alex@company.com">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="formSubject">Subject</label>
+                <input class="form-input" type="text" id="formSubject" required placeholder="Project Inquiry / Introduction">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="formMessage">Message</label>
+                <textarea class="form-textarea" id="formMessage" required placeholder="Tell me a bit about what you're working on..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;" id="formSubmitBtn">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <span>© <span id="currentYear"></span> An Jeng. Crafted with care & modern web standards.</span>
+      </div>
+      <div>
+        <a href="#hero" class="back-to-top" id="backToTopBtn">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">✕</button>
+      <div class="modal-badge" id="modalCategory">Category</div>
+      <h3 class="modal-title" id="modalTitle">Project Title</h3>
+      
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span>📌</span> Overview & Objectives
+        </div>
+        <p class="modal-desc" id="modalOverview"></p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span>⚙️</span> Technical Architecture & Challenges Solved
+        </div>
+        <p class="modal-desc" id="modalArchitecture"></p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span>📈</span> Measurable Outcomes & Performance
+        </div>
+        <p class="modal-desc" id="modalOutcomes"></p>
+      </div>
+
+      <div class="modal-actions" id="modalActions">
+        <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-glass btn-sm" id="modalCodeBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span>View Source</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast" id="toastNotification">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span id="toastMessage">Action completed successfully!</span>
+  </div>
+
+  <!-- JavaScript Bundle -->
+  <script src="script.js"></script>
+</body>
+</html>
