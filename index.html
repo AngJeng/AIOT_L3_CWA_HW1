@@ -67,48 +67,49 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
-            <!-- Salutation & Big Name Spotlight -->
-            <div class="hero-intro-salutation">
-              <span class="sparkle">✦</span> Hello, I'm
-            </div>
-            
-            <h1 class="hero-name-title">
-              <span class="gradient-text editable-target" id="heroNameDisplay" data-field="name">An Jeng</span>
-            </h1>
-            
-            <p class="hero-personal-tagline">
-              Builder, thinker & creative technologist crafting thoughtful digital tools and exploring the frontiers of software.
-            </p>
-
-            <!-- Dynamic Time & Greeting Widget Bar (Positioned directly under name & tagline) -->
-            <div class="time-widget-bar" id="timeWidgetBar">
-              <span class="time-greeting-pill" id="timeGreetingPill">
+            <!-- Sleek Live Presence & Time HUD Capsule -->
+            <div class="hero-status-capsule" id="timeWidgetBar">
+              <span class="capsule-item greeting" id="timeGreetingPill">
                 <span id="timeGreetingIcon">🌅</span>
                 <span id="timeGreetingText">Good Morning</span>
               </span>
-              <span class="time-divider"></span>
-              <span class="time-clock-display" id="liveClockDisplay">12:00:00 AM</span>
-              <button class="time-btn-toggle" id="toggleClockFormatBtn" title="Switch 12H / 24H mode">12H</button>
-              <span class="time-divider"></span>
-              <span class="timezone-badge" id="timezoneBadge">
+              <span class="capsule-sep"></span>
+              <span class="capsule-item clock">
+                <span id="liveClockDisplay">12:00:00 AM</span>
+                <button class="clock-toggle-chip" id="toggleClockFormatBtn" title="Switch 12H / 24H mode">12H</button>
+              </span>
+              <span class="capsule-sep"></span>
+              <span class="capsule-item timezone" id="timezoneBadge">
                 <span>🌍</span> <span id="timezoneText">UTC</span>
               </span>
-              <button class="copy-timestamp-btn" id="copyTimestampBtn" title="Copy Current ISO Timestamp to Clipboard">
+              <span class="capsule-sep"></span>
+              <button class="capsule-action-btn" id="copyTimestampBtn" title="Copy Current ISO Timestamp to Clipboard">
                 <span>📋</span> <span>Timestamp</span>
               </button>
             </div>
 
-            <!-- Passions & Interests Badges -->
-            <div class="hero-tags-row">
-              <span class="hero-badge-pill">⚡ Software & Distributed Systems</span>
-              <span class="hero-badge-pill">🧠 Intelligent AI Workflows</span>
-              <span class="hero-badge-pill">🎨 Interactive Craft</span>
-              <span class="hero-badge-pill">🌱 Continuous Exploration</span>
+            <!-- Big Name Focal Point -->
+            <div class="hero-name-display">
+              <div class="hero-eyebrow">
+                <span class="sparkle">✦</span> Hello, I'm
+              </div>
+              <h1 class="hero-name-text gradient-text editable-target" id="heroNameDisplay" data-field="name">
+                An Jeng
+              </h1>
             </div>
 
-            <p class="hero-description">
-              Welcome to my digital space. Here you'll find what I'm exploring, the systems I've built, my design principles, and ways we can create something meaningful together.
+            <!-- Crisp Personal Narrative -->
+            <p class="hero-narrative">
+              Builder, thinker, and software engineer crafting intelligent architectures, modern digital tools, and human-centric web experiences.
             </p>
+
+            <!-- Focus Domains Badges -->
+            <div class="hero-focus-tags">
+              <span class="focus-tag">Distributed Systems</span>
+              <span class="focus-tag">Autonomous AI</span>
+              <span class="focus-tag">Reactive Frontends</span>
+              <span class="focus-tag">Design Craft</span>
+            </div>
 
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary" id="heroProjectsBtn">

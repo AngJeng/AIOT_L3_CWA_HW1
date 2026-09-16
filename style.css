@@ -388,70 +388,159 @@ img {
   align-items: flex-start;
 }
 
-.hero-intro-salutation {
+/* Sleek Live Status HUD Capsule */
+.hero-status-capsule {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--accent-cyan);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.hero-name-title {
-  font-size: clamp(3.2rem, 7.5vw, 5.5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  margin-bottom: 12px;
-}
-
-.hero-personal-tagline {
-  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
-  font-weight: 500;
-  color: #e2e8f0;
-  line-height: 1.45;
-  margin-bottom: 20px;
-  max-width: 620px;
-}
-
-.hero-tags-row {
-  display: flex;
+  gap: 12px;
+  background: rgba(14, 19, 31, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  padding: 6px 18px;
+  margin-bottom: 28px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 240, 255, 0.08);
+  font-size: 0.84rem;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
-  margin-bottom: 24px;
+  transition: all var(--transition-fast);
 }
 
-.hero-badge-pill {
+.hero-status-capsule:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(0, 240, 255, 0.18);
+}
+
+.capsule-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  transition: border-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.hero-badge-pill:hover {
-  border-color: var(--accent-cyan);
-  transform: translateY(-1px);
+.capsule-item.greeting {
+  font-weight: 700;
+  color: var(--accent-cyan);
+}
+
+.capsule-item.clock {
+  font-family: var(--font-mono);
+  font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.04em;
 }
 
-.hero-description {
-  font-size: 1.12rem;
+.clock-toggle-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
   color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 580px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.clock-toggle-chip:hover {
+  background: rgba(0, 240, 255, 0.2);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.capsule-sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.capsule-item.timezone {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+}
+
+.capsule-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 6px;
+  font-size: 0.74rem;
+  color: #c7d2fe;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.capsule-action-btn:hover {
+  background: var(--accent-indigo);
+  color: #07090e;
+  font-weight: 600;
+}
+
+/* Hero Typography & Hierarchy */
+.hero-name-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-name-text {
+  font-size: clamp(3.5rem, 8vw, 5.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  filter: drop-shadow(0 4px 25px rgba(0, 240, 255, 0.18));
+}
+
+.hero-narrative {
+  font-size: clamp(1.15rem, 2.2vw, 1.32rem);
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  max-width: 600px;
+  font-weight: 400;
+}
+
+.hero-focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 34px;
+}
+
+.focus-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.focus-tag:hover {
+  color: var(--accent-cyan);
+  border-color: rgba(0, 240, 255, 0.35);
+  background: rgba(0, 240, 255, 0.08);
+  transform: translateY(-1px);
 }
 
 .hero-actions {
@@ -1439,6 +1528,18 @@ img {
   .status-pill {
     display: none;
   }
+
+  .hero-status-capsule {
+    width: 100%;
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .hero-status-capsule .capsule-sep {
+    display: none;
+  }
 }
 
 /* ==========================================================================
@@ -1521,93 +1622,7 @@ body.theme-cyberpunk::after {
   transform: translateY(-1px);
 }
 
-/* --- Live Time & Greeting Widget Bar --- */
-.time-widget-bar {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  background: rgba(14, 19, 31, 0.7);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  padding: 8px 18px;
-  margin-bottom: 24px;
-  backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.86rem;
-  max-width: 100%;
-}
-
-.time-greeting-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  color: var(--accent-cyan);
-}
-
-.time-divider {
-  width: 1px;
-  height: 16px;
-  background: var(--border-subtle);
-}
-
-.time-clock-display {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: 0.05em;
-}
-
-.time-btn-toggle {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  padding: 2px 8px;
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.time-btn-toggle:hover {
-  background: rgba(0, 240, 255, 0.15);
-  color: var(--accent-cyan);
-  border-color: var(--accent-cyan);
-}
-
-.timezone-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-faint);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-}
-
-.copy-timestamp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  color: #c7d2fe;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.copy-timestamp-btn:hover {
-  background: var(--accent-indigo);
-  color: #07090e;
-  font-weight: 600;
-}
+/* --- (Time widget is styled via .hero-status-capsule above) --- */
 
 /* --- Profile Editor Styles --- */
 .profile-edit-bar {
