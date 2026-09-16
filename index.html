@@ -67,7 +67,20 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
-            <!-- Dynamic Time & Greeting Widget Bar -->
+            <!-- Salutation & Big Name Spotlight -->
+            <div class="hero-intro-salutation">
+              <span class="sparkle">✦</span> Hello, I'm
+            </div>
+            
+            <h1 class="hero-name-title">
+              <span class="gradient-text editable-target" id="heroNameDisplay" data-field="name">An Jeng</span>
+            </h1>
+            
+            <p class="hero-personal-tagline">
+              Builder, thinker & creative technologist crafting thoughtful digital tools and exploring the frontiers of software.
+            </p>
+
+            <!-- Dynamic Time & Greeting Widget Bar (Positioned directly under name & tagline) -->
             <div class="time-widget-bar" id="timeWidgetBar">
               <span class="time-greeting-pill" id="timeGreetingPill">
                 <span id="timeGreetingIcon">🌅</span>
@@ -85,26 +98,25 @@
               </button>
             </div>
 
-            <div class="hero-badge">
-              <span class="sparkle">✦</span>
-              <span>Full-Stack & AI Systems Engineer</span>
+            <!-- Passions & Interests Badges -->
+            <div class="hero-tags-row">
+              <span class="hero-badge-pill">⚡ Software & Distributed Systems</span>
+              <span class="hero-badge-pill">🧠 Intelligent AI Workflows</span>
+              <span class="hero-badge-pill">🎨 Interactive Craft</span>
+              <span class="hero-badge-pill">🌱 Continuous Exploration</span>
             </div>
-            
-            <h1 class="hero-title">
-              Engineering <span class="gradient-text">intelligent systems</span> & high-performance digital products.
-            </h1>
-            
+
             <p class="hero-description">
-              Hi, I'm <strong>An Jeng</strong>. I build resilient distributed architectures, modern frontends, and LLM-powered agentic workflows that bridge deep technical rigor with intuitive user experience.
+              Welcome to my digital space. Here you'll find what I'm exploring, the systems I've built, my design principles, and ways we can create something meaningful together.
             </p>
 
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary" id="heroProjectsBtn">
-                <span>View Projects</span>
+                <span>Explore Work</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a href="#contact" class="btn btn-glass" id="heroContactBtn">
-                <span>Get in Touch</span>
+              <a href="#about" class="btn btn-glass" id="heroAboutBtn">
+                <span>About Me</span>
               </a>
               <button class="btn btn-glass" id="copyEmailQuickBtn" title="Copy email address">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
@@ -121,27 +133,27 @@
                 <div class="terminal-dot yellow"></div>
                 <div class="terminal-dot green"></div>
               </div>
-              <div class="terminal-title">an_jeng_profile.ts</div>
+              <div class="terminal-title">an_jeng_snapshot.ts</div>
             </div>
             <div class="terminal-body">
               <div class="terminal-line">
                 <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-code"><span class="kw">const</span> engineer = {</span>
+                <span class="terminal-code"><span class="kw">const</span> anJeng = {</span>
               </div>
               <div class="terminal-line" style="padding-left: 20px;">
                 <span class="terminal-code"><span class="prop">name</span>: <span class="str">"An Jeng"</span>,</span>
               </div>
               <div class="terminal-line" style="padding-left: 20px;">
-                <span class="terminal-code"><span class="prop">location</span>: <span class="str">"San Francisco, CA / Remote"</span>,</span>
+                <span class="terminal-code"><span class="prop">identity</span>: <span class="str">"Builder, Learner & Creator"</span>,</span>
               </div>
               <div class="terminal-line" style="padding-left: 20px;">
-                <span class="terminal-code"><span class="prop">focus</span>: [<span class="str">"Full-Stack"</span>, <span class="str">"Agentic AI"</span>, <span class="str">"Cloud Systems"</span>],</span>
+                <span class="terminal-code"><span class="prop">passions</span>: [<span class="str">"Deep Tech"</span>, <span class="str">"Creative Code"</span>, <span class="str">"Systems"</span>],</span>
               </div>
               <div class="terminal-line" style="padding-left: 20px;">
-                <span class="terminal-code"><span class="prop">stack</span>: [<span class="str">"TypeScript"</span>, <span class="str">"Python"</span>, <span class="str">"React"</span>, <span class="str">"Next.js"</span>, <span class="str">"PyTorch"</span>],</span>
+                <span class="terminal-code"><span class="prop">philosophy</span>: <span class="str">"Build with intention & curiosity"</span>,</span>
               </div>
               <div class="terminal-line" style="padding-left: 20px;">
-                <span class="terminal-code"><span class="prop">status</span>: <span class="val">"Ready to build ambitious software"</span></span>
+                <span class="terminal-code"><span class="prop">status</span>: <span class="val">"Always open to bold ideas"</span></span>
               </div>
               <div class="terminal-line">
                 <span class="terminal-prompt">&gt;</span>
@@ -149,7 +161,7 @@
               </div>
               <div class="terminal-line">
                 <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-code">engineer.deploySolution();</span>
+                <span class="terminal-code">anJeng.sayHello();</span>
                 <span class="terminal-cursor"></span>
               </div>
             </div>

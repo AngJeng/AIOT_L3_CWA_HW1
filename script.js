@@ -435,8 +435,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
 
-          if (updatedProfile.name && navLogoSpan) {
-            navLogoSpan.textContent = updatedProfile.name;
+          if (updatedProfile.name) {
+            editableTargets.forEach((t) => {
+              if (t.getAttribute('data-field') === 'name') {
+                t.textContent = updatedProfile.name;
+              }
+            });
+            if (navLogoSpan) navLogoSpan.textContent = updatedProfile.name;
           }
 
           localStorage.setItem('user_portfolio_profile', JSON.stringify(updatedProfile));
