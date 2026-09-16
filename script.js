@@ -256,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate sending feedback
       const originalBtnText = formSubmitBtn.innerHTML;
       formSubmitBtn.disabled = true;
       formSubmitBtn.innerHTML = '<span>Sending Message...</span>';
@@ -269,4 +268,369 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 900);
     });
   }
+
+  // ==========================================================================
+  // BONUS FEATURES IMPLEMENTATION
+  // ==========================================================================
+
+  // 11. 🌅 Dynamic Greeting, 🔄 12H/24H Clock, 🌍 Timezone & 📋 Copy Timestamp
+  const initLiveClock = () => {
+    const greetingPill = document.getElementById('timeGreetingPill');
+    const greetingIcon = document.getElementById('timeGreetingIcon');
+    const greetingText = document.getElementById('timeGreetingText');
+    const clockDisplay = document.getElementById('liveClockDisplay');
+    const toggleClockFormatBtn = document.getElementById('toggleClockFormatBtn');
+    const timezoneText = document.getElementById('timezoneText');
+    const copyTimestampBtn = document.getElementById('copyTimestampBtn');
+
+    // Detect visitor timezone
+    try {
+      const detectedTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (timezoneText && detectedTimezone) {
+        timezoneText.textContent = detectedTimezone;
+      }
+    } catch (e) {
+      if (timezoneText) timezoneText.textContent = 'UTC';
+    }
+
+    // Load or set 12H / 24H mode
+    let is24Hour = localStorage.getItem('user_clock_24h') === 'true';
+
+    const updateClock = () => {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      // Update Dynamic Greeting based on current hour
+      if (greetingIcon && greetingText) {
+        if (hours >= 5 && hours < 12) {
+          greetingIcon.textContent = '🌅';
+          greetingText.textContent = 'Good Morning';
+        } else if (hours >= 12 && hours < 18) {
+          greetingIcon.textContent = '☀️';
+          greetingText.textContent = 'Good Afternoon';
+        } else {
+          greetingIcon.textContent = '🌙';
+          greetingText.textContent = 'Good Evening';
+        }
+      }
+
+      // Format time
+      if (clockDisplay) {
+        if (is24Hour) {
+          const displayHours = String(hours).padStart(2, '0');
+          clockDisplay.textContent = `${displayHours}:${minutes}:${seconds}`;
+          if (toggleClockFormatBtn) toggleClockFormatBtn.textContent = '24H';
+        } else {
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          const displayHours = hours % 12 || 12;
+          clockDisplay.textContent = `${String(displayHours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
+          if (toggleClockFormatBtn) toggleClockFormatBtn.textContent = '12H';
+        }
+      }
+    };
+
+    // Toggle 12H / 24H click event
+    if (toggleClockFormatBtn) {
+      toggleClockFormatBtn.addEventListener('click', () => {
+        is24Hour = !is24Hour;
+        localStorage.setItem('user_clock_24h', is24Hour);
+        updateClock();
+        showToast(`Clock switched to ${is24Hour ? '24-Hour' : '12-Hour (AM/PM)'} format.`);
+      });
+    }
+
+    // Copy Timestamp button
+    if (copyTimestampBtn) {
+      copyTimestampBtn.addEventListener('click', async () => {
+        const nowIso = new Date().toISOString();
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(nowIso);
+          } else {
+            const tempInput = document.createElement('input');
+            tempInput.value = nowIso;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+          }
+          showToast(`Copied ISO timestamp: ${nowIso}`);
+        } catch (err) {
+          showToast(`Timestamp: ${nowIso}`);
+        }
+      });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  };
+  initLiveClock();
+
+  // 12. ✏️ Editable Profile with 💾 localStorage Persistence
+  const initProfileEditor = () => {
+    const toggleEditProfileBtn = document.getElementById('toggleEditProfileBtn');
+    const resetProfileBtn = document.getElementById('resetProfileBtn');
+    const editableTargets = document.querySelectorAll('.editable-target');
+    const navLogoSpan = document.querySelector('#navLogo span');
+
+    const defaultProfile = {
+      name: 'An Jeng',
+      role: 'Senior Full-Stack & AI Systems Engineer',
+      location: 'San Francisco Bay Area / Global Remote',
+      bio: 'I specialize in designing and shipping products at the intersection of <strong>distributed backend systems</strong>, <strong>modern reactive frontends</strong>, and <strong>autonomous AI agent architectures</strong>.'
+    };
+
+    // Load custom profile if saved in localStorage
+    const loadSavedProfile = () => {
+      try {
+        const saved = localStorage.getItem('user_portfolio_profile');
+        if (saved) {
+          const profileData = JSON.parse(saved);
+          editableTargets.forEach((target) => {
+            const field = target.getAttribute('data-field');
+            if (profileData[field]) {
+              if (field === 'bio') {
+                target.innerHTML = profileData[field];
+              } else {
+                target.textContent = profileData[field];
+              }
+            }
+          });
+          if (profileData.name && navLogoSpan) {
+            navLogoSpan.textContent = profileData.name;
+          }
+        }
+      } catch (err) {
+        console.warn('Could not load profile from localStorage', err);
+      }
+    };
+    loadSavedProfile();
+
+    let isEditing = false;
+
+    if (toggleEditProfileBtn) {
+      toggleEditProfileBtn.addEventListener('click', () => {
+        isEditing = !isEditing;
+
+        if (isEditing) {
+          document.body.classList.add('editing-profile');
+          editableTargets.forEach((target) => {
+            target.contentEditable = 'true';
+          });
+          toggleEditProfileBtn.innerHTML = '💾 Save Profile';
+          showToast('Editing mode activated! Click on Name, Role, Location, or Bio to edit.');
+        } else {
+          document.body.classList.remove('editing-profile');
+          const updatedProfile = { ...defaultProfile };
+
+          editableTargets.forEach((target) => {
+            target.contentEditable = 'false';
+            const field = target.getAttribute('data-field');
+            if (field === 'bio') {
+              updatedProfile[field] = target.innerHTML;
+            } else {
+              updatedProfile[field] = target.textContent.trim();
+            }
+          });
+
+          if (updatedProfile.name && navLogoSpan) {
+            navLogoSpan.textContent = updatedProfile.name;
+          }
+
+          localStorage.setItem('user_portfolio_profile', JSON.stringify(updatedProfile));
+          toggleEditProfileBtn.innerHTML = '✏️ Edit Profile';
+          showToast('Profile successfully saved to localStorage!');
+        }
+      });
+    }
+
+    if (resetProfileBtn) {
+      resetProfileBtn.addEventListener('click', () => {
+        localStorage.removeItem('user_portfolio_profile');
+        editableTargets.forEach((target) => {
+          const field = target.getAttribute('data-field');
+          if (defaultProfile[field]) {
+            if (field === 'bio') {
+              target.innerHTML = defaultProfile[field];
+            } else {
+              target.textContent = defaultProfile[field];
+            }
+          }
+          target.contentEditable = 'false';
+        });
+
+        if (navLogoSpan) {
+          navLogoSpan.textContent = defaultProfile.name;
+        }
+
+        isEditing = false;
+        document.body.classList.remove('editing-profile');
+        if (toggleEditProfileBtn) {
+          toggleEditProfileBtn.innerHTML = '✏️ Edit Profile';
+        }
+        showToast('Profile reset to original defaults.');
+      });
+    }
+  };
+  initProfileEditor();
+
+  // 13. 🎨 Theme Mode: Sleek Obsidian vs. Cyberpunk 2077 Neon
+  const initThemeSwitcher = () => {
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    const applyTheme = (theme) => {
+      if (theme === 'cyberpunk') {
+        document.body.classList.add('theme-cyberpunk');
+        if (themeIcon) themeIcon.textContent = '🔥';
+        if (themeLabel) themeLabel.textContent = 'Cyberpunk';
+      } else {
+        document.body.classList.remove('theme-cyberpunk');
+        if (themeIcon) themeIcon.textContent = '🎨';
+        if (themeLabel) themeLabel.textContent = 'Sleek';
+      }
+    };
+
+    const savedTheme = localStorage.getItem('user_portfolio_theme') || 'sleek';
+    applyTheme(savedTheme);
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const isCurrentCyberpunk = document.body.classList.contains('theme-cyberpunk');
+        const nextTheme = isCurrentCyberpunk ? 'sleek' : 'cyberpunk';
+        applyTheme(nextTheme);
+        localStorage.setItem('user_portfolio_theme', nextTheme);
+        showToast(`Theme switched to ${nextTheme === 'cyberpunk' ? 'Cyberpunk 2077 Neon' : 'Sleek Obsidian'}.`);
+      });
+    }
+  };
+  initThemeSwitcher();
+
+  // 14. 🌌 Interactive Canvas Particle Constellation Background
+  const initParticleBackground = () => {
+    const canvas = document.getElementById('particleCanvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    let mouseX = -9999;
+    let mouseY = -9999;
+
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 30 : 65;
+    const maxDistance = isMobile ? 80 : 120;
+    const mouseRadius = 130;
+
+    const particles = [];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.7;
+        this.vy = (Math.random() - 0.5) * 0.7;
+        this.radius = Math.random() * 1.8 + 1;
+        this.baseAlpha = Math.random() * 0.45 + 0.2;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+
+        // Mouse repulsion / interaction
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouseRadius) {
+          const angle = Math.atan2(dy, dx);
+          const force = (mouseRadius - dist) / mouseRadius;
+          this.x -= Math.cos(angle) * force * 2;
+          this.y -= Math.sin(angle) * force * 2;
+        }
+      }
+
+      draw() {
+        const isCyber = document.body.classList.contains('theme-cyberpunk');
+        ctx.fillStyle = isCyber ? `rgba(252, 238, 10, ${this.baseAlpha})` : `rgba(0, 240, 255, ${this.baseAlpha})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const connectParticles = () => {
+      const isCyber = document.body.classList.contains('theme-cyberpunk');
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < maxDistance) {
+            const alpha = (1 - dist / maxDistance) * 0.18;
+            ctx.strokeStyle = isCyber ? `rgba(255, 0, 85, ${alpha})` : `rgba(99, 102, 241, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    let animationFrameId = null;
+
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+
+      connectParticles();
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }, { passive: true });
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, { passive: true });
+
+    window.addEventListener('mouseout', () => {
+      mouseX = -9999;
+      mouseY = -9999;
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        animate();
+      }
+    });
+  };
+  initParticleBackground();
 });

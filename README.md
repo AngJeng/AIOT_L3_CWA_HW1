@@ -23,6 +23,20 @@ A modern, responsive, dark-mode personal website for **An Jeng** (Full-Stack & A
 
 ---
 
+## 🎁 0916 Bonus Features Implemented
+
+- 🌅 **Time-Aware Greeting**: Automatically changes to Good Morning / Afternoon / Evening according to visitor's local hour.
+- 🔄 **12H / 24H Clock Toggle**: Real-time ticking digital clock with 1-click 12H/24H format switcher.
+- 🌍 **Automatic Timezone Detection**: Identifies and displays visitor's local timezone (e.g., `Asia/Taipei`, `America/Los_Angeles`).
+- 📋 **Copy Timestamp**: 1-click to copy current ISO timestamp with toast feedback.
+- ✏️ **Live Editable Profile**: Interactive editing mode directly on the page to customize Name, Role, Location, and Bio.
+- 💾 **`localStorage` Persistence**: Automatically preserves customized profile, 12H/24H format preference, and theme selection across browser refreshes.
+- 🌌 **Interactive Particle Constellation Background**: 60fps HTML5 canvas rendering glowing nodes connected with proximity lines and reacting to cursor repulsion.
+- 🎨 **Sleek Obsidian vs. Cyberpunk 2077 Theme Toggle**: Instant switch between glassmorphic obsidian and vibrant Cyberpunk neon aesthetic with scanline effects.
+- 📱 **Mobile-First Responsive Design**: Adaptive layout optimized across phones, tablets, and widescreen displays.
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Simple Local Preview
