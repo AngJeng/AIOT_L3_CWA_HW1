@@ -4,19 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/fetch-weather.js && next build",
     "start": "next start",
     "lint": "next lint",
-    "etl": "python3 -m scripts.run_pipeline"
+    "etl": "node scripts/fetch-weather.js"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",
     "leaflet": "^1.9.4",
-    "next": "14.2.3",
+    "next": "^14.2.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
-    "recharts": "^2.12.7"
+    "recharts": "^2.15.4"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.9",
