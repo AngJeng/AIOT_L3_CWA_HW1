@@ -10,7 +10,7 @@ const Database = require("better-sqlite3");
 
 const API_URL = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0003-001";
 const DEFAULT_API_KEY = "CWA-55FDA6D3-A43C-4AE0-BB30-E62D5F684FB2";
-const DB_PATH = path.resolve(__dirname, "../public/data.db");
+const DB_PATH = path.join(process.cwd(), "public", "data.db");
 
 // County to Taiwan Six Major Regions mapping
 const COUNTY_TO_REGION = {
