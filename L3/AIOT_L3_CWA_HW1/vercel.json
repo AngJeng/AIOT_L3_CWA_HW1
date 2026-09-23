@@ -1,0 +1,4 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "python3 -m scripts.run_pipeline && next build"
+}
